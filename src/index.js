@@ -2,55 +2,10 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
-// Sample data
-var movieData = require('./movie-data.json')
-var lotsMoreMovies = require('./lots-more-movies.json')
-
-var Header = React.createClass({
-  render: function() {
-    return (
-      <div className="hello col-sm-3 text-center">
-        <h2>Hi, {this.props.name}!</h2>
-      </div>
-    )
-  }
-})
-
-var Movie = React.createClass({
-  render: function() {
-    return (
-      <div className="col-sm-2">
-        <div className="thumbnail">
-          <img className="img-responsive" role="presentation" src={this.props.poster} />
-          <div className="caption">
-            <h3>{this.props.title}</h3>
-            <p>{this.props.genre}</p>
-            <p>{this.props.runtime}</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-})
-
-var MovieList = React.createClass({
-  render: function() {
-    return (
-      <div className="movies col-sm-8">
-        <div className="row">
-          {movieData.map(function(movie) {
-            return (
-              <Movie poster={movie.poster}
-                     title={movie.title}
-                     genre={movie.genre}
-                     runtime={movie.runtime} />
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
-})
+// Components
+var Header = require('./components/Header')
+var Movie = require('./components/Movie')
+var MovieList = require('./components/MovieList')
 
 var App = React.createClass({
   render: function() {
