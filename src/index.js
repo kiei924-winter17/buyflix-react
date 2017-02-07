@@ -34,7 +34,7 @@ var App = React.createClass({
           </div>
           <Header name={this.props.name} />
         </div>
-        <Navbar />
+        <Navbar movieCount={this.state.movies.length} />
         <div className="main row">
           <MovieList movies={this.state.movies} />
           <div className="details col-sm-4">
