@@ -8,10 +8,8 @@ var MovieList = React.createClass({
         <div className="row">
           {this.props.movies.map(function(movie) {
             return (
-              <Movie poster={movie.poster}
-                     title={movie.title}
-                     genre={movie.genre}
-                     runtime={movie.runtime} />
+              <Movie key={movie.id}
+                     movie={movie} />
             )
           })}
         </div>
