@@ -13,6 +13,9 @@ var MovieList = require('./components/MovieList')
 var Navbar = require('./components/Navbar')
 
 var App = React.createClass({
+  movieClicked: function() {
+    window.alert("You clicked a movie!")
+  },
   loadMoreMoviesClicked: function() {
     var allTheMovies = movieData.concat(lotsMoreMovies)
     this.setState({
@@ -36,7 +39,7 @@ var App = React.createClass({
         </div>
         <Navbar movieCount={this.state.movies.length} />
         <div className="main row">
-          <MovieList movies={this.state.movies} />
+          <MovieList movieClicked={this.movieClicked} movies={this.state.movies} />
           <div className="details col-sm-4">
             <h3><a href="#" className="btn btn-success" onClick={this.loadMoreMoviesClicked}>Load More Movies!</a></h3>
             <div className="row">
