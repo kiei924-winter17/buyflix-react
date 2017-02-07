@@ -12,6 +12,12 @@ var Movie = require('./components/Movie')
 var MovieList = require('./components/MovieList')
 
 var App = React.createClass({
+  getInitialState: function() {
+    return {
+      movies: movieData,
+      currentMovie: null
+    }
+  },
   render: function() {
     return (
       <div>
