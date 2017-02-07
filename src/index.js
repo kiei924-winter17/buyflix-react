@@ -13,7 +13,7 @@ var MovieList = require('./components/MovieList')
 var Navbar = require('./components/Navbar')
 
 var App = React.createClass({
-  movieClicked: function() {
+  movieClicked: function(movie) {
     window.alert("You clicked a movie!")
   },
   loadMoreMoviesClicked: function() {
