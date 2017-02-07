@@ -14,7 +14,9 @@ var Navbar = require('./components/Navbar')
 
 var App = React.createClass({
   movieClicked: function(movie) {
-    window.alert("You clicked a movie!")
+    this.setState({
+      currentMovie: movie
+    })
   },
   loadMoreMoviesClicked: function() {
     var allTheMovies = movieData.concat(lotsMoreMovies)
