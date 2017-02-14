@@ -49,6 +49,9 @@ var App = React.createClass({
       })
       console.log(user)
     } else {
+      this.setState({
+        currentUser: null
+      })
       console.log("Logged out") }
   },
   loginComplete: function(error, response) {
