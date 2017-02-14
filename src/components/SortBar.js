@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Navbar = React.createClass({
+var SortBar = React.createClass({
 
   render: function() {
     return (
@@ -18,4 +18,4 @@ var Navbar = React.createClass({
 
 });
 
-module.exports = Navbar;
+module.exports = SortBar;
