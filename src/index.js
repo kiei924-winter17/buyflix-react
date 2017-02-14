@@ -44,6 +44,9 @@ var App = React.createClass({
   },
   authChanged: function(user) {
     if (user) {
+      this.setState({
+        currentUser: user
+      })
       console.log(user)
     } else {
       console.log("Logged out") }
@@ -69,14 +72,14 @@ var App = React.createClass({
     }
   },
   componentDidMount: function() {
-    // base.syncState('/movies', { context: this, state: 'movies', asArray: true })
-    // base.onAuth(this.authChanged)
+    base.syncState('/movies', { context: this, state: 'movies', asArray: true })
+    base.onAuth(this.authChanged)
   },
   render: function() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} 
-                login={this.login} 
+        <Header currentUser={this.state.currentUser}
+                login={this.login}
                 logout={this.logout} />
         <SortBar movieCount={this.state.movies.length} />
         <div className="main row">
